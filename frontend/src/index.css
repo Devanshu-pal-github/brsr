@@ -1,1 +1,143 @@
 @import "tailwindcss";
+
+/* Theme Variables */
+:root {
+  /* Theme Colors */
+  --color-background: #f2f4f5;
+  --color-white: #ffffff;
+  
+  /* Brand Colors */
+  --color-primary: #002a85;
+  --color-primary-hover: #001d5e;
+  
+  /* Sidebar Colors */
+  --color-sidebar: #000d30;
+  --color-sidebar-selected: #20305d;
+  
+  /* Status Colors */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  
+  /* Text Colors */
+  --color-text-primary: #111827;
+  --color-text-secondary: #4b5563;
+  --color-text-muted: #6b7280;
+  
+  /* Border Colors */
+  --color-border: #e5e7eb;
+  
+  /* Shadow */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+/* Base Styles */
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+}
+
+/* Component Classes */
+.card {
+  background-color: var(--color-white);
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem;
+}
+
+.btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  transition: all 200ms;
+}
+
+.btn-base:focus {
+  outline: none;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--color-primary);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.btn-base:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  composes: btn-base;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.btn-outline {
+  composes: btn-base;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Status Classes */
+.status-success {
+  color: var(--color-success);
+}
+
+.status-warning {
+  color: var(--color-warning);
+}
+
+.status-error {
+  color: var(--color-error);
+}
+
+/* Text Classes */
+.text-heading {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.text-body {
+  color: var(--color-text-secondary);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+/* Sidebar Classes */
+.sidebar {
+  background-color: var(--color-sidebar);
+  color: var(--color-white);
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.sidebar-item:hover {
+  background-color: var(--color-sidebar-selected);
+  color: var(--color-white);
+}
+
+.sidebar-item-active {
+  background-color: var(--color-sidebar-selected);
+  color: var(--color-white);
+  border-left: 4px solid var(--color-primary);
+}
